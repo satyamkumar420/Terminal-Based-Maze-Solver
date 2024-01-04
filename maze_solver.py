@@ -53,6 +53,7 @@ def find_path(maze):
                 queue.put((neighbor, path + [neighbor]))
     return None
   
+# <---- MAZE SOLVING HELPER FUNCTIONS ---->
 def get_neighbors(maze, current):
     row, col = current
     neighbors = []
