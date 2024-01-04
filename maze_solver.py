@@ -2,6 +2,7 @@ import random
 from queue import Queue
 # Define constants for maze elements
 
+# <---- COLOR CODES ---->
 RED = "\033[91m"
 GREEN = "\033[92m"
 CYAN = "\033[96m"
