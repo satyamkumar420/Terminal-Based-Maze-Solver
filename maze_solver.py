@@ -74,13 +74,21 @@ def mark_path(maze, path):
 # <---- MAIN FUNCTION AND INPUT ---->
 def main():
     try:
-        while True:
-            n = int(input("Enter the size of the maze (n x n): "))
-            wall_percentage = int(input("Enter the percentage of walls (<= 25%): "))
-            
-            if wall_percentage > 25:
-                print("Please enter a value between 0 to 25.")
+        while True:            
+            try:
+                n = int(input("Enter the size of the maze (n x n): "))
+                if n <= 0:
+                    raise ValueError(f"{RED}Invalid input. Size of the maze must be a positive integer.{END_COLOR}")
+
+                wall_percentage = int(input("Enter the percentage of walls (<= 25%): "))
+                if not (0 <= wall_percentage <= 25):
+                    raise ValueError(f"{RED}Invalid input. Wall percentage must be between 0 and 25.{END_COLOR}")
+
+            except ValueError as e:
+                # print(f"Error: {e}")
+                print(f"{RED}Please enter valid inputs.{END_COLOR}")
                 continue  # Restart the loop
+
             
             maze = generate_maze(n, wall_percentage)
             print("\nGenerated Maze:")
@@ -99,24 +107,24 @@ def main():
                     if ask_option == 'G':
                         continue  # Restart the loop for generating another puzzle
                     elif ask_option == 'E':
-                        print("Exiting the game.")
+                        print(f"{RED}Exiting the game.{END_COLOR}")
                         break  # Exit the loop and end the program
                     else:
-                        print("Invalid option. Exiting the game.")
+                        print(f"{RED}Invalid option. Exiting the game.{END_COLOR}")
                         break  # Exit the loop and end the program
                     
                 else:
-                    print("\nNo Path Found.")
+                    print(f"{RED}\nNo Path Found.{END_COLOR}")
             elif option == 'G':
                 continue  # Restart the loop for generating another puzzle
             elif option == 'E':
-                print("Exiting the game.")
+                print(f"{RED}Exiting the game.{END_COLOR}")
                 
                 break  # Exit the loop and end the program
             else:
                 print(f"{RED}Invalid option. Please enter P, G, or E.{END_COLOR}")
     except KeyboardInterrupt:
-        print("\nExiting the game.")            
+        print(f"{RED}\nExiting the game.{END_COLOR}")            
 if __name__ == "__main__":
     main()
 
