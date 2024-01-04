@@ -36,6 +36,7 @@ def print_maze(maze):
     for row in maze:
         print(" ".join(row))
         
+# <---- MAZE SOLVING ---->
 def find_path(maze):
     start = (0, 0)
     end = (len(maze) - 1, len(maze[0]) - 1)
