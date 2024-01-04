@@ -18,7 +18,7 @@ START = 'S'
 END = 'E'
 PATH = f'{GREEN}◍{END_COLOR}'
 
-
+# <---- MAZE GENERATION ---->
 def generate_maze(n, wall_percentage):
     maze = [[OPEN_SPACE] * n for _ in range(n)]
     # Add walls
