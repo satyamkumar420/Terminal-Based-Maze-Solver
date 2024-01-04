@@ -71,7 +71,7 @@ def mark_path(maze, path):
         if maze[row][col] != START and maze[row][col] != END:
             maze[row][col] = PATH
             
-
+# <---- MAIN FUNCTION AND INPUT ---->
 def main():
     try:
         while True:
@@ -114,7 +114,7 @@ def main():
                 
                 break  # Exit the loop and end the program
             else:
-                print("Invalid option. Please enter P, G, or E.")
+                print(f"{RED}Invalid option. Please enter P, G, or E.{END_COLOR}")
     except KeyboardInterrupt:
         print("\nExiting the game.")            
 if __name__ == "__main__":
