@@ -31,6 +31,7 @@ def generate_maze(n, wall_percentage):
     maze[n - 1][n - 1] = END
     return maze
   
+# <---- MAZE PRINTING ---->
 def print_maze(maze):
     for row in maze:
         print(" ".join(row))
