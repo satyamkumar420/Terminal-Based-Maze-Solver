@@ -11,6 +11,7 @@ BLUE = "\033[94m"
 PURPLE = "\033[95m"
 END_COLOR = "\033[0m" 
 
+# <---- MAZE ELEMENTS ---->
 WALL = f'{RED}▓{END_COLOR}'
 OPEN_SPACE = f'{BLUE}◌{END_COLOR}'
 START = 'S'
