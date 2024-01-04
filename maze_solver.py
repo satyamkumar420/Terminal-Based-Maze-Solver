@@ -65,11 +65,13 @@ def get_neighbors(maze, current):
             neighbors.append((new_row, new_col))
     return neighbors
   
+# <---- MARKING PATH ---->
 def mark_path(maze, path):
     for row, col in path:
         if maze[row][col] != START and maze[row][col] != END:
             maze[row][col] = PATH
             
+
 def main():
     try:
         while True:
